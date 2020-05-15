@@ -1,0 +1,291 @@
+Python 3.8.2 (tags/v3.8.2:7b3ab59, Feb 25 2020, 22:45:29) [MSC v.1916 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> #tuplas
+>>> #Declaracion de una tupla 
+>>> tupla_diadelmes = (31,28,31,30,31,30,31,31,30,31,30,31)
+>>> print(tupla_diadelmes)
+(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
+>>> print(tupla_diadelmes[0])
+31
+>>> print(tupla_diadelmes[3])
+30
+>>> print(tupla_diadelmes[1])
+28
+>>> #Declaracion de tuplas anidadas
+>>> tupla_numeros =(('cero', 0),('uno', 1, 'UNO'), ('dos', 2), ('tres',3), ('cuatro', 4), ('x', 5))
+>>> print(tupla_numeros)
+(('cero', 0), ('uno', 1, 'UNO'), ('dos', 2), ('tres', 3), ('cuatro', 4), ('x', 5))
+>>> print(tupla_numeros[0])
+('cero', 0)
+>>> print(tupla_numeros[1])
+('uno', 1, 'UNO')
+>>> print(tupla_numeros[2][0])
+dos
+>>> print(tupla_numeros[2][1])
+2
+>>> print(tupla_numeros[1][0])
+uno
+>>> print(tupla_numeros[1][1])
+1
+>>> print(tupla_numeros[1][2])
+UNO
+>>> #Probando la mutabilidad de las listas vs la no mutabilidad de las tuplas
+>>> print("Valor actual" {}.format(lista_diasdelmes[0]))
+  File "<stdin>", line 1
+    print("Valor actual" {}.format(lista_diasdelmes[0]))
+                         ^
+SyntaxError: invalid syntax
+>>> lista_diasdelmes[0]=50
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'lista_diasdelmes' is not defined
+>>> print("Valor cambiado {}".format(lista_diasdelmes[0]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'lista_diasdelmes' is not defined
+>>> lista_diasdelMes=[31,28,31,30,31,30,31,31,30,31,30,31]
+>>> print("Valor actual {}".format(lista_diasdelMes[0]))
+Valor actual 31
+>>> lista_diasdelMes[0]= 50
+>>> print("Valor cambiado {}".format(lista_diasdelMes[0]))
+Valor cambiado 50
+>>> tupla_diadelmes[0]= 50
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+>>> #Se debe importar la libreria para hacer uso de namedtuple
+>>> #Se crea la tupla con nombre
+>>> #El primer argumento es el nombre de la tupla, mientras que el segundo argumento son los campos
+>>> #p es la referencia a la tupla
+>>> planeta = namedtuple('planeta', ['nombre', 'numero'])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'namedtuple' is not defined
+>>> planeta1=planeta('Mercurio', 1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'planeta' is not defined
+>>> planeta = namedtuple('Planeta', ['nombre', 'numero'])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'namedtuple' is not defined
+>>> namedtuple = planeta('Planeta', ['Nombre', 'numero'])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'planeta' is not defined
+>>> from collections import namedtuple
+>>> planeta= namedtuple('planeta', ['nombre', 'numero'])
+>>> planeta1 = planeta('Mercurio', '1')
+>>> print(planeta1)
+planeta(nombre='Mercurio', numero='1')
+>>> planeta2= planeta('venus', '2')
+>>> print(planeta2)
+planeta(nombre='venus', numero='2')
+>>> #Se imprimen los valores de los campos
+>>> #Usando la referencia se llama a cada uno de sus campos
+>>> print(planeta1.nombre, planeta1.numero)
+Mercurio 1
+>>> print(planeta2.nombre, planeta2.numero)
+venus 2
+>>> print(planeta2[0], planeta2[1])
+venus 2
+>>> print('campos de la tupla. {}'.format(planeta1._fields))
+campos de la tupla. ('nombre', 'numero')
+>>> #Diccionarios
+>>> #Creando un diccionario
+>>> elementos = {'hidrogeno':1, 'helio':2, 'carbon':6}
+>>> #El momento de la impresion, pueden aparecer en diferente orden del introducido
+>>> print(elementos)
+{'hidrogeno': 1, 'helio': 2, 'carbon': 6}
+>>> print(elementos['hidrogeno'])
+1
+>>> #Se pueden agregar mas elementos al diccionario
+>>> elementos['litio'] = 3
+>>> elementos['nitrogeno'] = 8
+>>> print(elementos)
+{'hidrogeno': 1, 'helio': 2, 'carbon': 6, 'litio': 3, 'nitrogeno': 8}
+>>> #Creando un nuevo diccionario
+>>> elementos2 = {}
+>>> elementos2['H'] = {'name': 'hydrogen', 'number':1, 'weight':1.00794}
+>>> elementos2['He'] = {'name': 'Helium', 'number':2, 'weight' : 4.002602}
+>>> print(elementos2)
+{'H': {'name': 'hydrogen', 'number': 1, 'weight': 1.00794}, 'He': {'name': 'Helium', 'number': 2, 'weight': 4.002602}}
+>>> #Imprimiendo los datos de un elemento del diccionario
+>>> print(elementos2['H'])
+{'name': 'hydrogen', 'number': 1, 'weight': 1.00794}
+>>> print(elementos2['H']['name'])
+hydrogen
+>>> print(elementos2['H']['number'])
+1
+>>> elementos2['H']['weight']= 4.30
+>>> print(elementos2['H'])
+{'name': 'hydrogen', 'number': 1, 'weight': 4.3}
+>>> #Agregando elementos a una llave
+>>> elementos2['H'].update({'Gas noble':True})
+>>> print(elementos2['H'])
+{'name': 'hydrogen', 'number': 1, 'weight': 4.3, 'Gas noble': True}
+>>> #Muesstra todos los elementos del diccionario
+>>> print(elementos2.items())
+dict_items([('H', {'name': 'hydrogen', 'number': 1, 'weight': 4.3, 'Gas noble': True}), ('He', {'name': 'Helium', 'number': 2, 'weight': 4.002602})])
+>>> #Muestras todas las llaves del diccionario
+>>> print(elementos2.keys())
+dict_keys(['H', 'He'])
+>>> #Funciones
+>>> #Las funciones pueden recibir n número de parametros, no se necesita indicar el tipo
+>>> def imprime_nombre(nombre)
+  File "<stdin>", line 1
+    def imprime_nombre(nombre)
+                             ^
+SyntaxError: invalid syntax
+>>> def imprime_nombre(nombre):
+		print("Hola"+nombre) #Las cadenas se pueden concatenar con el + 
+... ... #Llamada a la funcion
+... imprime_nombre("33")
+  File "<stdin>", line 4
+    imprime_nombre("33")
+    ^
+SyntaxError: invalid syntax
+>>> #Las funciones pueden recibir n número de parametros, no se necesita indicar el tipo
+>>> def imprime_nombre(nombre):
+		print("hola"+nombre)
+... ... 
+>>> #Llamada a la fucion
+>>> imprime_nombre("33")
+hola33
+>>> #Definiendo una función que regresa el cuadrado de un número
+>>> def cuadrado(x):
+		return x**2
+... ... 
+>>> x = 5
+>>> #La funcion format() sirve para convertir los parametros que recibe, en cadenas; estos valores son reemplazados
+>>> #Por las llaves de la cadena
+>>> print("El cuadrado de {} es {}".format(x, cuadrado(x))
+... 
+... 
+... 
+... 
+
+... ... 
+... 
+... 
+... 
+... 
+... 
+... 
+... print("El cuadrado de {} es {}".format(x, cuadrado(x)))
+  File "<stdin>", line 14
+    print("El cuadrado de {} es {}".format(x, cuadrado(x)))
+    ^
+SyntaxError: invalid syntax
+>>> def cuadrado(x):
+		return x**2
+... ... 
+>>> x = 5
+>>> #La funcion format() sirve para convertir los parametros que recibe, en cadenas; estos valores son reemplazados
+>>> #Por las llaves de la cadena
+>>> print("El cuadrado de {} es {}".format(x, cuadrado(x)))
+El cuadrado de 5 es 25
+>>> #Definiendo una funcion que regrese mas de un valor
+>>> def varios(x):
+		return x**2, x**3, x**4
+... ... 
+>>> cuadrado_default()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'cuadrado_default' is not defined
+>>> val1, val2,val3 = varios(2)
+>>> print("{} {} {}".format(val1, val2, val3))
+4 8 16
+>>> #Funcion con un parametro con un valor por defecto
+>>> def cuadrado_default(x=3):
+... return x**2
+  File "<stdin>", line 2
+    return x**2
+    ^
+IndentationError: expected an indented block
+>>> def cuadrado_default(x=3)
+		return x**2
+  File "<stdin>", line 1
+    def cuadrado_default(x=3)
+                            ^
+SyntaxError: invalid syntax
+>>>   File "<stdin>", line 1
+    return x**2
+    ^
+IndentationError: unexpected indent
+>>> def cuadrado_default(x=3)
+		return x**2
+  File "<stdin>", line 1
+    def cuadrado_default(x=3)
+                            ^
+SyntaxError: invalid syntax
+>>>   File "<stdin>", line 1
+    return x**2
+    ^
+IndentationError: unexpected indent
+>>> def cuadrado_default(x=3):
+... 		return x**2
+... 
+>>> cuadrado_default()
+9
+>>> #La funcion regresa tres, valores, pero solo nos interesa el primero y el tercero
+>>> val4, _, val5 = varios(2)
+>>> print("{} {}".format(val4, val5))
+4 16
+>>> #Se crea una variable en el espacio global de nombres
+>>> vg = 'Global'
+>>> #Se crea una funcion que imprime la variable global
+>>> def funcion_v1():
+... 	print(vg)
+... 
+>>> #Llamada a la funcion que imprime la variable global
+>>> funcion_v1()
+Global
+>>> #Imprime la variable global
+>>> print(vg)
+Global
+>>> #Se crea una variable local que tiene el mismo nombre que la variable global
+>>> def funcion_v2():
+...  vg = "Local"
+...  print(vg)
+... 
+>>> funcion_v2()
+Local
+>>> print(vg)
+Global
+>>> def funcion_v3():
+... print(vg)
+	vg = "Local"
+	print(vg)
+  File "<stdin>", line 2
+    print(vg)
+    ^
+IndentationError: expected an indented block
+>>>   File "<stdin>", line 1
+    vg = "Local"
+    ^
+IndentationError: unexpected indent
+>>>   File "<stdin>", line 1
+    print(vg)
+    ^
+IndentationError: unexpected indent
+>>> def funcion_v3():
+		vg = "Local"
+		print(vg)
+... ... ... 
+>>> funcion_v3()
+Local
+>>> def funcion_v4():
+		global vg
+		print(vg)
+		vg = "Local"
+		print(vg)
+... ... ... ... ... 
+>>> #Al momento de ejecutar la funcion se imprime el valor que tenga asignado vg antes de se modifica por la funcion.
+>>> #Despues de asignar el valor, este es impreso
+>>> funcion_v4()
+Global
+Local
+>>> print(vg)
+Local
+>>> 

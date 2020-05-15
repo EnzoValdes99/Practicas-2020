@@ -1,0 +1,102 @@
+Python 3.8.2 (tags/v3.8.2:7b3ab59, Feb 25 2020, 22:45:29) [MSC v.1916 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> #Inicializando cadenas}
+>>> cadena1= 'Hola'
+>>> cadena2= "Mundo"
+>>> print(cadena1)
+Hola
+>>> print(cadena2)
+Mundo
+>>> concat_cadenas = cadena1 + cadena2
+>>> print(concat_cadenas)
+HolaMundo
+>>> #Para concatenar un numero y una cadena se debe usar la funcion str()
+>>> num_cadena = concat_cadenas +' '+ str(3)
+>>> print(num_cadena)
+HolaMundo 3
+>>> #El valor de la variable se va a imprimir en el lugar donde se encuentre {} en la cadena
+>>> num_cadena = "{} {} {}".format(cadena1, cadena2, 3)
+>>> print(num_cadena)
+Hola Mundo 3
+>>> #Cuando se agrega un numero dentro de {#}, el valor la variable que se encuentra en la posicion
+>>> #dentro de la funcion format(), sera impreso
+>>> num_cadena = "Cambiando el orden: {1} {2} {0} #".format(cadena1, cadena2, 3)
+>>> print(num_cadena)
+Cambiando el orden: Mundo 3 Hola #
+>>> 
+>>> #Operadores aritmeticos
+>>> #Para el exponente se puede utilizar asterisco
+>>> print( 1+5 )
+6
+>>> print(6*3)
+18
+>>> print(10-4)
+6
+>>> print(100/50)
+2.0
+>>> print(10%2)
+0
+>>> print((20*3) + (10+1) / 10)
+61.1
+>>> print(((20*3) + (10+1)) /10)
+7.1
+>>> print(2**2)
+4
+>>> #Booleanos
+>>> False and True
+False
+>>> print(7<5) #Falso
+False
+>>> print(7>5) #verdadero
+True
+>>> print((11*3) + 2 == 36 - 1)
+True
+>>> print((11*3)+2 >= 36)
+False
+>>> print("curso" != "CuRsO")
+True
+>>> #Listas
+>>> #Declaracion de una lista simple
+>>> lista_diasdelMes=[31,28,31,30,31,30,31,31,30,31]
+>>> print(lista_diasdelMes)
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31]
+>>> print(lista_diasdelMes[0])
+31
+>>> print(lista_diasdelMes[6])
+31
+>>> print(lista_diasdelMes[11])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: list index out of range
+>>> print(lista_diasdelMes[2])
+31
+>>> #Declaracion de listas anidadas
+>>> lista_numeros= [['cero',0], ['uno',1], ['dos',2], ['tres', 3], ['cuatro', 4], ['x', 5]]
+>>> print(lista_numeros)
+[['cero', 0], ['uno', 1], ['dos', 2], ['tres', 3], ['cuatro', 4], ['x', 5]]
+>>> print(lista_numeros[0])
+['cero', 0]
+>>> print(lista_numeros[1])
+['uno', 1]
+>>> print(lista_numeros[1][0])
+uno
+>>> print(lista_numeros[1][1])
+1
+>>> print(lista_numeros[2][0])
+dos
+>>> print(lista_numeros[2][1])
+2
+>>> print(lista_numeros[1][2])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: list index out of range
+>>> lista_numeros[5][0] = "cinco"
+>>> print(lista_numeros[5])
+['cinco', 5]
+>>> 
+>>> #Tuplas
+>>> #Declaracion de una Tupla
+>>> tupla_diasDelMes=(31,28,21,30,31,30,31,31,30,31,30,31)
+>>> print(tupla_diasDelMes)
+(31, 28, 21, 30, 31, 30, 31, 31, 30, 31, 30, 31)
+>>> print(tupla_diasDelMes[0])
