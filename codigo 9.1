@@ -1,0 +1,95 @@
+Python 3.8.2 (tags/v3.8.2:7b3ab59, Feb 25 2020, 22:45:29) [MSC v.1916 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> #Programa que imprime perimetro, area de un triangulo
+>>> #Perimetro:
+>>> #Perimetro de un triangulo equilatero:
+>>> b = 10 #donde b es la base del triangulo
+>>> P= (b * 3)
+>>> print(P)
+30
+>>> cadena1= "El perimetro de un triangulo equilatero es"
+>>> cadena2 = P
+>>> concat_cadenas = cadena2 + cadena1
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+>>> print(cadena1)
+El perimetro de un triangulo equilatero es
+>>> print(P)
+30
+>>> print(cadena1, P)
+El perimetro de un triangulo equilatero es 30
+>>> #Programa que imprime el perimetro de un triangulo con lados desiguales, sea escaleno o isosceles
+>>> B = 10
+>>> L1 = 8
+>>> L2 = 9
+>>> P = (B + L1 + L2)
+>>> cadena3 = "EL perimetro de un triangulo con lados desiguales es"
+>>> print(cadena3, P)
+EL perimetro de un triangulo con lados desiguales es 27
+>>> #Programa para calcular el area de un triangulo
+>>> B = 10
+>>> H = 10
+>>> #donde H es la altura, B es la base del triangulo
+>>> A = ((B * H)/2)
+>>> cadena4 = "El area de un triangulo es"
+>>> print(cadena4, A)
+El area de un triangulo es 50.0
+>>> #Programa para calcular el area y perimetro de un cubo
+>>> #Programa para calcular el area y perimetro de un rectangulo
+>>> B = 10 #Base del rectangulo
+>>> L = 5 #Lado del rectangulo
+>>> Perimetro = ((B * 2) + (L * 2))
+>>> Area = (B * L)
+>>> cadena5: "El perimetro del rectangulo es"
+>>> cadena6: "El area del rectangulo"
+>>> print(cadena5, Perimetro, cadena6, Area)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'cadena5' is not defined
+>>> print(cadena5)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'cadena5' is not defined
+>>> cadena5 = "y el perimetro del rectangulo es" 
+>>> print(cadena5)
+y el perimetro del rectangulo es
+>>> print(cadena6, Area, cadena5, Perimetro)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'cadena6' is not defined
+>>> print(cadena6, Area, cadena5, Perimetro)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'cadena6' is not defined
+>>> cadena6 = "El area de un rectangulo es"
+>>> print(cadena6)
+El area de un rectangulo es
+>>> print(cadena6, Area, cadena5, Perimetro)
+El area de un rectangulo es 50 y el perimetro del rectangulo es 30
+>>> #Calcular el area y perimetro de un circulo
+>>> PI = 3.14 #Valor aproximado de Pi
+>>> R = 5 #Radio del circulo
+>>> Area = (PI * (R**R))
+>>> D = 10 #Diametro del circulo
+>>> Perimetro = (PI * D)
+>>> cadena7 = "El perimetro de un circulo es"
+>>> cadena8 = "El area de un circulo es"
+>>> print(cadena7, Area, )
+El perimetro de un circulo es 9812.5
+>>> 
+>>> Area = (PI * (R**2))
+>>> print(cadena7, Perimetro, cadena8, Area)
+El perimetro de un circulo es 31.400000000000002 El area de un circulo es 78.5
+>>> #Calcular el area  y el perimetro de un trapecio
+>>> BM = 15 
+>>> Bm = 10 #ambas las bases del trapecio
+>>> h = 5 #altura del trapecio
+>>> L = 7 #Lados del trapecio
+>>> Perimetro = (BM + Bm + (L * 2) )
+>>> Area = (((Bm + BM) * h) / 2)
+>>> cadena9 = "El perimetro del trapecio es"
+>>> cadena10 = "El area del trapecio es"
+>>> print(cadena9, Perimetro, cadena10, Area)
+El perimetro del trapecio es 39 El area del trapecio es 62.5
+>>> 
