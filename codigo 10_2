@@ -1,0 +1,246 @@
+Python 3.8.2 (tags/v3.8.2:7b3ab59, Feb 25 2020, 22:45:29) [MSC v.1916 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> def factorial(n):
+		i = 2
+		temp = 1
+		while i < n+1:
+			tmp = tmp * i
+			i = i + 1
+		return tmp
+... ... ... ... ... ... ... 
+>>> print(factorial(4))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 5, in factorial
+UnboundLocalError: local variable 'tmp' referenced before assignment
+>>> print (factorial(4))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 5, in factorial
+UnboundLocalError: local variable 'tmp' referenced before assignment
+>>> def factorial(n):
+		i = 2
+		tmp = 1
+		while i <n+1:
+			tmp = tmp * i
+			i = i + 1
+		return tmp
+... ... ... ... ... ... ... 
+>>> print(factorial(4))
+24
+>>> print(factorial(6))
+720
+>>> #Ciclo for
+>>> for x in [1,2,3,4,5]:
+		print(x)
+... ... 
+1
+2
+3
+4
+5
+>>> #La funcion range() sirve para generar una lista
+>>> for x in range(5):
+		print(x)
+... ... 
+0
+1
+2
+3
+4
+>>> #Tambien se puede inicializar desde numeros negativos
+
+>>> >>> for x in range(-5,2):
+			print(x)
+... ... 
+-5
+-4
+-3
+-2
+-1
+0
+1
+>>> for num in ["uno", "dos", "tres", "cuatro"]:
+		print(num)
+... ... 
+uno
+dos
+tres
+cuatro
+>>> #Iteracion en diccionarios
+>>> #Creando un diccionario
+>>> elementos = {'hidrogeno':1, 'helio':2, 'carbon':6 }
+>>> for llave, valor in elementos.item():
+		print(llave, "=", valor)
+... ... 
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'dict' object has no attribute 'item'
+>>> elementos = {'Hidrogeno': 1, 'helio': 2, 'carbon': 6}
+>>> for llave, valor in elementos.items():
+		print(llave, " = ", valor)
+... ... 
+Hidrogeno  =  1
+helio  =  2
+carbon  =  6
+>>> #Obteniendo solo las llaves
+>>> for llave in elementos.keys():
+		print(llave)
+... ... 
+Hidrogeno
+helio
+carbon
+>>> #Obteniendo solo los valores
+>>> for valor in elementos.values():
+		print(valor)
+... ... 
+1
+2
+6
+>>> #Si se necesita iterar utilizando un indice
+>>> for idx, x in enumerate(elementos):
+		print("El indice es: {} y el elemento: {}".format(idx, x))
+... ... 
+El indice es: 0 y el elemento: Hidrogeno
+El indice es: 1 y el elemento: helio
+El indice es: 2 y el elemento: carbon
+>>> def cuenta_idiom(limite):
+		for i in range(limite, 0. -1):
+			print(i)
+		else:
+			print("Cuenta finalizada")
+... ... ... ... ... 
+>>> cuenta_idiom(5)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in cuenta_idiom
+TypeError: 'float' object cannot be interpreted as an integer
+>>> cuenta_idiom(5)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in cuenta_idiom
+TypeError: 'float' object cannot be interpreted as an integer
+>>> def cuenta_idiom(limite):
+		for i in range(limite, 0, -1):
+			print(i)
+		else:
+			print("Cuenta finalizada")
+... ... ... ... ... 
+>>> cuenta_idiom(4)
+4
+3
+2
+1
+Cuenta finalizada
+>>> cuenta_idiom(5)
+5
+4
+3
+2
+1
+Cuenta finalizada
+>>> def cuenta_idiomv2(limite):
+		for i in range(limite, 0, -1):
+			print(i)
+			if i == 3:
+				break
+		else:
+			print("Cuenta finalizada")
+... ... ... ... ... ... ... 
+>>> cuenta_idiomv2(5)
+5
+4
+3
+>>> #Bibliotecas
+>>> #Para utilizar una biblioteca, esta se debe de importar
+	
+>>> >>> import math
+>>> x = math.cos(math.pi)
+>>> print(x)
+>>>  2
+-1.0
+0.0
+>>> print(x)
+-1.0
+>>> #Tambien se pueden importar todas las funciones de las bibliotecas, de esta manera no se tiene que usar el prefijo de la biblioteca
+>>> from math import *
+>>> x = cos(pi)
+>>> print(x)
+-1.0
+>>> #Otra manera es importar las funciones que se necesitan
+>>> from math import cos, pi
+>>> x = cos(pi)
+>>> print(x)
+-1.0
+>>> #Una vez que la biblioteca esta importada, se pueden conocer las funciones que este contiene
+>>> print(dir(math))
+['__doc__', '__loader__', '__name__', '__package__', '__spec__', 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh', 'ceil', 'comb', 'copysign', 'cos', 'cosh', 'degrees', 'dist', 'e', 'erf', 'erfc', 'exp', 'expm1', 'fabs', 'factorial', 'floor', 'fmod', 'frexp', 'fsum', 'gamma', 'gcd', 'hypot', 'inf', 'isclose', 'isfinite', 'isinf', 'isnan', 'isqrt', 'ldexp', 'lgamma', 'log', 'log10', 'log1p', 'log2', 'modf', 'nan', 'perm', 'pi', 'pow', 'prod', 'radians', 'remainder', 'sin', 'sinh', 'sqrt', 'tan', 'tanh', 'tau', 'trunc']
+>>> #Para conocer como utilizar las funciones, se puede utilizar la funcion help
+>>> help(math.log)
+Help on built-in function log in module math:
+
+log(...)
+    log(x, [base=math.e])
+    Return the logarithm of x to the given base.
+    
+    If the base not specified, returns the natural logarithm (base e) of x.
+
+>>> #Se puede definir un alias para llamar a las funciones que tiene la biblioteca math.
+>>> #Esta es la forma mas recomendada para importar modulos, ya que de esta manera se sabe de que modulo proviene
+>>> import math as ma
+	
+>>> >>> x= ma.cos(ma.pi)
+>>> print(x)
+-1.0
+>>> #Graficación
+>>> #Esta linea se ocupa para que las graficas que se generen queden embebidas dentro de la pagina
+>>> %pylab inline
+  File "<stdin>", line 1
+    %pylab inline
+    ^
+SyntaxError: invalid syntax
+>>> import matplotlib.pyplot as plt
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'matplotlib'
+>>> %pylab inline
+  File "<stdin>", line 1
+    %pylab inline
+    ^
+SyntaxError: invalid syntax
+>>> import matplotlib.pyplot as plt
+	from mpl_toolkits.mplot3d import Axes3D
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'matplotlib'
+>>>   File "<stdin>", line 1
+    from mpl_toolkits.mplot3d import Axes3D
+    ^
+IndentationError: unexpected indent
+>>> import matplotlib.pyplot
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'matplotlib'
+>>> -m pip install -u pip
+  File "<stdin>", line 1
+    -m pip install -u pip
+       ^
+SyntaxError: invalid syntax
+>>> python -m pip install -U pip
+  File "<stdin>", line 1
+    python -m pip install -U pip
+              ^
+SyntaxError: invalid syntax
+>>> import matplotlib.pyplot as plt
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'matplotlib'
+>>> import matplotlib
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'matplotlib'
+>>> from matplotlib import pyplot as plt
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'matplotlib'
+>>> from matplotlib import pyplot as plt
