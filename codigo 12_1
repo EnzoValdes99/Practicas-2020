@@ -1,0 +1,38 @@
+Python 3.8.2 (tags/v3.8.2:7b3ab59, Feb 25 2020, 22:45:29) [MSC v.1916 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> def fibonacci_recursivo(numero):
+		if numero == 1:
+			return 0
+		if numero == 2 or numero == 3:
+			return 1
+		return fibonacci_recursivo(numero-1) + fibonacci_recursivo(numero-2)
+... ... ... ... ... ... 
+>>> fibonacci_recursivo(13)
+144
+>>> #Memoria inicial
+>>> memoria = {1:0, 2:1, 3:1}
+>>> def fibonacci_memo(numero):
+		if numero in memoria:
+			return memoria(numero)
+		memoria[numero] = fibonacci_memo(numero-1) + fibonacci_memo(numero-2)
+		return memoria[numero]
+... ... ... ... ... 
+>>> fibonacci_memo(13)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 4, in fibonacci_memo
+  File "<stdin>", line 4, in fibonacci_memo
+  File "<stdin>", line 4, in fibonacci_memo
+  [Previous line repeated 7 more times]
+  File "<stdin>", line 3, in fibonacci_memo
+TypeError: 'dict' object is not callable
+>>> memoria  = {1:0, 2:1, 3:1}
+>>> def fibonacci_memo(numero):
+		if numero in memoria:
+			return memoria[numero]
+		memoria[numero] = fibonacci_memo(numero-1) + fibonacci_memo(numero-2)
+		return memoria[numero]
+... ... ... ... ... 
+>>> fibonacci_memo(13)
+144
+>>> 
